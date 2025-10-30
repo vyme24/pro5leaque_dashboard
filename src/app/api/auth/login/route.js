@@ -2,14 +2,14 @@ import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import dbConnect from "@/lib/mongoose";
-import User from "@/models/User";
+import AdminUser from "@/models/AdminUser";
 
 export async function POST(req) {
   await dbConnect();
 
   try {
     const { email, password } = await req.json();
-    const user = await User.findOne({ email });
+    const user = await AdminUser.findOne({ email });
 
     if (!user) {
       return NextResponse.json(

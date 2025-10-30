@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import AuthLayout from "@/components/AuthLayout";
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
@@ -51,10 +50,7 @@ export default function ForgotPassword() {
   };
 
   return (
-    <AuthLayout
-      title="Forgot Password"
-      subtitle="Enter your email address below and we'll send you a link to reset your password."
-    >
+    <div>
       {error && <p className="text-sm text-red-500 mb-4">{error}</p>}
       {success && <p className="text-sm text-green-500 mb-4">{success}</p>}
 
@@ -81,6 +77,6 @@ export default function ForgotPassword() {
           Remembered your password? <a href="/auth/login" className="text-blue-500 underline">Login</a>
         </p>
       </form>
-    </AuthLayout>
+    </div>
   );
 }

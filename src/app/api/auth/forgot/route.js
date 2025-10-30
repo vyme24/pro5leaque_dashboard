@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import dbConnect from "@/lib/mongoose";
 import User from "@/models/User";
 import crypto from "crypto";
-import { forgotPassword } from "@/email-templates/forgot-password";
 
 export async function POST(req) {
   try {
@@ -34,12 +33,12 @@ export async function POST(req) {
     user.resetExpires = resetExpires;
     await user.save();
 
-    // Send email using the template
-    await forgotPassword({
-      email: user.email,
-      full_name: user.fullName || "User",
-      reset_password_token: resetToken,
-    });
+    // // Send email using the template
+    // await forgotPassword({
+    //   email: user.email,
+    //   full_name: user.fullName || "User",
+    //   reset_password_token: resetToken,
+    // });
 
     return NextResponse.json({
       success: true,

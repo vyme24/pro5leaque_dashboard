@@ -96,6 +96,8 @@ export async function GET(req) {
 
     const totalTransactions = payments.length;
     const totalAmount = successPayments.reduce((sum, p) => sum + (p.amount || 0), 0);
+    const totalRefundedAmount = refundedPayments.reduce((sum, p) => sum + (p.amount || 0), 0);
+
     const prevTotalAmount = prevPayments
       .filter((p) => p.status === "success")
       .reduce((sum, p) => sum + (p.amount || 0), 0);
@@ -190,6 +192,7 @@ export async function GET(req) {
         payments: {
           totalTransactions,
           totalAmount,
+          totalRefundedAmount,
           successCount: successPayments.length,
           failedCount: failedPayments.length,
           refundedCount: refundedPayments.length,

@@ -63,13 +63,13 @@ export default function AdminDashboard() {
 
         {/* ---- Metrics Section ---- */}
         <motion.section
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
           {loading
-            ? [...Array(4)].map((_, i) => (
+            ? [...Array(5)].map((_, i) => (
                 <div
                   key={i}
                   className="h-24 bg-white border border-gray-100 rounded-2xl shadow-sm p-4 animate-pulse"
@@ -85,21 +85,31 @@ export default function AdminDashboard() {
                   value={report.users.total}
                   hint={`${report.users.active} active`}
                 />
+
                 <MetricCard
                   label="Transactions"
                   value={report.payments.totalTransactions}
                   hint={`${report.payments.successCount} success`}
                 />
+
                 <MetricCard
                   label="Revenue (€)"
                   value={formatCurrency(report.revenue.totalAmount)}
                   hint="Total amount"
                 />
+
+                <MetricCard
+                  label={"Refunded (€)"}
+                  value={formatCurrency(report.payments.totalRefundedAmount)}
+                   hint={`${report.payments.refundedCount} refunded`}
+                />
+
                 <MetricCard
                   label="Subscriptions"
                   value={report.subscriptions.total}
                   hint={`${report.subscriptions.active} active`}
                 />
+              
               </>
             )}
         </motion.section>

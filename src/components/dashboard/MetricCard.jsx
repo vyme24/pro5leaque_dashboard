@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function MetricCard({ label, value, hint, icon: Icon }) {
+export default function MetricCard({ label, value, hint, icon: Icon, color }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -15,7 +15,7 @@ export default function MetricCard({ label, value, hint, icon: Icon }) {
         {Icon && <Icon className="w-5 h-5 text-teal-500" />}
       </div>
 
-      <div className="text-2xl font-semibold text-slate-800 tracking-tight">
+      <div className={color ? `text-2xl font-semibold ${color}` : "text-2xl font-semibold"}>
         {typeof value === "number" || value ? value : "—"}
       </div>
 

@@ -23,7 +23,7 @@ const ranges = [
   { label: "Last 3 Months", value: "3m" },
   { label: "Last 6 Months", value: "6m" },
   { label: "This Year", value: "year" },
-  { label: "Custom Range", value: "custom" },
+  //{ label: "Custom Range", value: "custom" },
 ];
 
 export default function DashboardHeader({ range, setRange, onRefresh }) {

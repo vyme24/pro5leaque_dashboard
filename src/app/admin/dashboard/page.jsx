@@ -97,7 +97,7 @@ export default function AdminDashboard() {
                   value={formatCurrency(report.revenue.totalAmount)}
                   hint="Total amount"
                 />
-
+                
                 <MetricCard
                   label={"Refunded (€)"}
                   value={formatCurrency(report.payments.totalRefundedAmount)}

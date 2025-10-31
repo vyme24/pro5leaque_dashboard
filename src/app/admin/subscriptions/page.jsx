@@ -17,7 +17,7 @@ export default function SubscriptionsPage() {
    
     {
       key: "startDate",
-      label: "Start Date",
+      label: "Subscribe Date",
       render: (row) => new Date(row.startDate).toUTCString(),
     },
     {

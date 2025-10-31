@@ -17,7 +17,7 @@ export default function TransactionsPage() {
     {
       key: "paymentDate",
       label: "Date",
-      render: (row) => new Date(row.paymentDate).toLocaleString(),
+      render: (row) => new Date(row.paymentDate).toUTCString(),
     },
   ];
 

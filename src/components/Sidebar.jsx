@@ -127,7 +127,7 @@ export default function Sidebar() {
                 className="w-10 h-10 rounded-full object-cover ring-2 ring-cyan-500/20"
               />
               <div>
-                <p className="text-sm font-semibold text-slate-800">Vikas</p>
+                <p className="text-sm font-semibold text-slate-800">Account</p>
                 <p className="text-xs text-slate-500">Administrator</p>
               </div>
             </div>

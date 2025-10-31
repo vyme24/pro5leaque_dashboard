@@ -18,21 +18,21 @@ export default function SubscriptionsPage() {
     {
       key: "startDate",
       label: "Start Date",
-      render: (row) => new Date(row.startDate).toLocaleString(),
+      render: (row) => new Date(row.startDate).toUTCString(),
     },
     {
       key: "nextBillingDate",
       label: "Next Billing",
       render: (row) =>
         row.nextBillingDate
-          ? new Date(row.nextBillingDate).toLocaleString()
+          ? new Date(row.nextBillingDate).toUTCString()
           : "-",
     },
     {
       key: "lastPaymentDate",
       label: "last Payment Date",
       render: (row) =>
-        row.lastPaymentDate ? new Date(row.lastPaymentDate).toLocaleString() : "-",}
+        row.lastPaymentDate ? new Date(row.lastPaymentDate).toUTCString() : "-",}
   ];
 
   return (
